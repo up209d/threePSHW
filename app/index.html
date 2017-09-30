@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="dl" ng-controller="dlController">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datalabs - Transurban</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="/styles/main.css">
+  <!-- endbuild -->
+
+</head>
+<body>
+<!--[if lt IE 10]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div id="root">
+  <div class="dl-root animate-show-hide animation fade-overlap fade-in-out-up-down" ui-view></div>
+</div>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='https://www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+  ga('create','UA-XXXXX-X');ga('send','pageview');
+</script>
+
+
+<!-- build:js scripts/vendor.js -->
+<script src="/node_modules/babel-polyfill/dist/polyfill.min.js"></script>
+<script src="/node_modules/mobile-detect/mobile-detect.min.js"></script>
+<script src="/node_modules/hammerjs/hammer.min.js"></script>
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/scripts/modernizr.js"></script>
+<script src="/bower_components/d3/d3.min.js"></script>
+<script src="/bower_components/angular/angular.min.js"></script>
+<script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="/node_modules/angular-hammer/angular.hammer.min.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/bundle.js -->
+<script src="/scripts/bundle.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

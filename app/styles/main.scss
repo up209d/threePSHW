@@ -1,0 +1,33 @@
+$icon-font-path: '../fonts/';
+
+// Import bootstrap -
+// Note: custom.scss is also imported in bootstrap, see _bootstrap.scss
+@import 'bootstrap';
+
+// Import globals
+@import 'animate';
+@import 'utils';
+@import 'reset';
+
+// Import D3 elements
+@import 'd3';
+
+// Components
+
+// Layouts
+
+// Pages
+
+
+
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+  z-index:9;
+  position: fixed;
+  top:0px;
+  width:100%;
+}

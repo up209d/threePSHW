@@ -1,0 +1,194 @@
+@import '../../bower_components/animatewithsass/animate.scss';
+
+// Default Animate Show Hide
+// ng-hide-add is add ng-hide class session
+// ng-hide-remove is remove ng-hide class session
+
+// FOR NG SHOW HIDE
+
+.animate-show-hide-fade.ng-hide-add {
+  @include fadeOut(
+    $duration: 0.3s,
+    $function: ease-out,
+    $fill: forwards
+  );
+  &.fade-overlap {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+  }
+}
+
+.animate-show-hide-fade.ng-hide-remove {
+  @include fadeIn(
+    $duration: 0.3s,
+    $function: ease-out,
+    $fill: forwards
+  );
+  &.fade-overlap {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+  }
+}
+
+
+
+.animate-show-hide-flip.ng-hide-add {
+  @include flipOutX(
+    $duration: .3s,
+    $fill: forwards
+  );
+  &.fade-overlap {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+  }
+}
+
+.animate-show-hide-flip.ng-hide-remove {
+  @include flipInX(
+    $duration: .3s,
+    $fill: forwards
+  );
+  &.fade-overlap {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+  }
+}
+
+// FOR NG IF SWITCH & ELSE
+
+.animate-show-hide {
+  &.transition {
+    &.fade-in-out {
+      &.ng-enter {
+        transition: all .3s ease-out;
+        opacity: 0;
+      }
+
+      &.ng-enter-active {
+        opacity: 1;
+      }
+
+      &.ng-leave {
+
+        &.fade-overlap {
+          pointer-events: none;
+          position: absolute;
+          width: 100%;
+        }
+
+        transition: all .3s ease-out;
+        opacity:1;
+      }
+
+      &.ng-leave-active {
+        opacity:0;
+
+        &.fade-overlap {
+          pointer-events: none;
+          position: absolute;
+          width: 100%;
+        }
+
+      }
+    }
+  }
+
+  &.animation {
+
+    // Fade In Out
+    &.fade-in-out {
+      &.ng-enter {
+
+        &.fade-overlap {
+          position: absolute;
+          width: 100%;
+        }
+
+        @include fadeIn(
+          $duration: 0.5s,
+          $function: ease-out,
+          $fill: forwards
+        );
+      }
+      &.ng-leave {
+
+        &.fade-overlap {
+          pointer-events: none;
+          position: absolute;
+          width: 100%;
+        }
+
+        @include fadeOut(
+          $duration: 0.5s,
+          $function: ease-out,
+          $fill: forwards
+        );
+      }
+    }
+
+    &.fade-in-out-up-down {
+      &.ng-enter {
+
+        &.fade-overlap {
+          position: absolute;
+          width: 100%;
+        }
+
+        @include fadeInUp(
+          $duration: 0.5s,
+          $function: ease-out,
+          $fill: forwards
+        );
+      }
+      &.ng-leave {
+
+        &.fade-overlap {
+          pointer-events: none;
+          position: absolute;
+          width: 100%;
+        }
+
+        @include fadeOutDown(
+          $duration: 0.5s,
+          $function: ease-out,
+          $fill: forwards
+        );
+      }
+    }
+
+    &.fade-in-out-down-up {
+      &.ng-enter {
+
+        &.fade-overlap {
+          position: absolute;
+          width: 100%;
+        }
+
+        @include fadeInDown(
+          $duration: 0.5s,
+          $function: ease-out,
+          $fill: forwards
+        );
+      }
+      &.ng-leave {
+
+        &.fade-overlap {
+          pointer-events: none;
+          position: absolute;
+          width: 100%;
+        }
+
+        @include fadeOutUp(
+          $duration: 0.5s,
+          $function: ease-out,
+          $fill: forwards
+        );
+      }
+    }
+
+  }
+}
