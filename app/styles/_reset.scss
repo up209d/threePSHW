@@ -27,11 +27,10 @@ html {
   @include onlyIfIE() {
     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
-
 }
 
 html,body {
@@ -105,3 +104,4 @@ li {
     padding: 0 !important;;
   }
 }
+

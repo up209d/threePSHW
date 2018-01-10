@@ -311,6 +311,12 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
+gulp.task('gzip', [], () => {
+  return gulp.src('dist/**/*.*(html|js|css|svg|json)')
+    .pipe($.gzip())
+    .pipe(gulp.dest('dist'))
+});
+
 gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
@@ -325,6 +331,6 @@ gulp.task('report',()=>{
 gulp.task('default', () => {
   return new Promise(resolve => {
     dev = false;
-    runSequence('clean', 'wait-250', 'modernizr', 'wiredep', 'wait-250', 'build', resolve);
+    runSequence('clean', 'wait-250', 'modernizr', 'wiredep', 'wait-250', 'build', 'gzip', resolve);
   });
 });
