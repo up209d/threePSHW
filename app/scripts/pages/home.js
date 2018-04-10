@@ -40,6 +40,7 @@ function dlHomeController($scope,$timeout,$element) {
 
   self.$postLink = function() {
     // DOM is ready, create instance attached to Canvas DOM element
+    console.log(self.state);
     self.canvas = $element[0].querySelector('canvas');
 
     self.isPostLinked = true;
@@ -49,16 +50,17 @@ function dlHomeController($scope,$timeout,$element) {
     document.body.appendChild(self.stats.dom);
 
     // Canvas Renderer
-
     self.renderer = new THREE.WebGLRenderer({
       canvas: $element[0].querySelector('canvas'),
       antialias: true,
       alpha: true
     });
 
+
     self.renderer.setClearColor('#FFFFFF',1);
 
     self.renderer.setSize(self.canvas.clientWidth,self.canvas.clientHeight);
+    self.renderer.setPixelRatio(self.state.resolution || 1);
 
     self.camera = new THREE.PerspectiveCamera(45, self.canvas.clientWidth/self.canvas.clientHeight, 1 , 10000);
 
@@ -152,8 +154,6 @@ function dlHomeController($scope,$timeout,$element) {
             tmpa[3] = Math.PI * 2;
             geometry.setPrefabData(rotationBuffer, cubeIndex, [tmpa[0],tmpa[1],tmpa[2],tmpa[3]]);
 
-
-
             tmpa[4] = options.duration;
             geometry.setPrefabData(durationBuffer, cubeIndex, [tmpa[4]]);
 
@@ -170,7 +170,7 @@ function dlHomeController($scope,$timeout,$element) {
 
       let material = new THREE.BAS.PhongAnimationMaterial({
         flatShading: THREE.FlatShading,
-        wireframe: true,
+        wireframe: false,
         uniforms: {
           time: {
             value: 0
